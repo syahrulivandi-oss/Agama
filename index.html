@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Makna Surat Al-Fatihah</title>
+
+  <!-- 🌸 CSS langsung di sini -->
+  <style>
+    body {
+      font-family: 'Amiri', 'Scheherazade', serif;
+      background-color: #f9f6f2;
+      background-image: radial-gradient(circle at top left, #f4efe6 0%, #f9f6f2 100%);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #a58e74, #d9c3a9);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      border-bottom: 4px solid #b68973;
+      font-family: 'Georgia', serif;
+    }
+    nav {
+      background-color: #d4b483;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #f7f4f1;
+      font-weight: bold;
+    }
+    section {
+      background-color: #ffffffcc;
+      border: 2px solid #d4b483;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 25px auto;
+      width: 85%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #4a3f35;
+      border-bottom: 2px dashed #c8a96a;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    p[dir="rtl"] {
+      font-size: 30px;
+      text-align: right;
+      color: #3b2f2f;
+      background: linear-gradient(to right, #fff6e5, #fffaf0);
+      padding: 10px;
+      border-right: 5px solid #c8a96a;
+      border-radius: 6px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.85;
+      transform: scale(1.05);
+    }
+
+    /* Warna tombol berdasarkan isi onclick */
+    button[onclick*="Malik"] {
+      background-color: #1125df;
+      color: rgb(235, 17, 17);
+    }
+
+    button[onclick*="Hanifah"] {
+      background-color: #5eaaa8;
+      color: white;
+      margin-left: 10px;
+    }
+
+    footer {
+      background-color: #b68973;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      border-top: 3px solid #d9c3a9;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        width: 95%;
+      }
+      p[dir="rtl"] {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🕌 HEADER -->
+  <header>
+    <h1>Makna dan Tafsir Surat Al-Fatihah</h1>
+    <p>Website Edukatif untuk Memahami Ayat dengan Gaya Islami</p>
+  </header>
+
+  <nav>
+    <a href="#ayat1">Ayat 1</a>
+    <a href="#ayat2">Ayat 2</a>
+    <a href="#ayat3">Ayat 3</a>
+    <a href="#ayat4">Ayat 4</a>
+    <a href="#ayat5">Ayat 5</a>
+    <a href="#ayat6">Ayat 6</a>
+    <a href="#ayat7">Ayat 7</a>
+  </nav>
+  
+  
+  <!-- 🌿 AYAT 1 -->
+  <section id="ayat1">
+    <h2>Ayat 1</h2>
+    <p dir="rtl" lang="ar">  بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+    </p>
+    <p><b>Bismillahirrahmanirrahim</b><br>
+    Artinya: Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang.</p>
+
+    <button onclick="toggle('malik1')">Tafsir Mazhab Mālik</button>
+    <button onclick="toggle('hanifah1')">Tafsir Mazhab Hanafi</button>
+
+    <p id="malik1" style="display:none;">
+      <b>Tafsir Imam Mālik:</b><br>
+      Imam Mālik tidak menolak makna “Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang”, 
+      tapi lebih menekankan fungsi <i>Bismillah</i> sebagai adab dan bentuk pengagungan kepada Allah sebelum melakukan sesuatu.  
+      Jadi, maknanya bukan sekadar kalimat pembuka, tapi pengakuan bahwa setiap amal harus dimulai dengan izin dan nama Allah.</p>
+
+    <p id="hanifah1" style="display:none;">
+      <b>Tafsir Imam Abu Hanifah:</b><br>
+      Imam Abu Hanifah memaknai <i>Bismillah</i> secara bahasa sama, 
+      namun lebih menekankan sisi tauhid dan kesadaran bahwa semua perbuatan harus karena Allah, bukan karena manusia.  
+      Arti “Bismillah” adalah memohon pertolongan kepada Allah dan mengingat sifat kasih sayang-Nya sebelum melakukan perbuatan.
+    </p>
+  </section>
+  
+  <!-- 🌿 AYAT 2 -->
+  <section id="ayat2">
+    <h2>Ayat 2</h2>
+    <p dir="rtl" lang="ar"> اَلۡحَمۡدُ لِلّٰهِ رَبِّ الۡعٰلَمِيۡنَۙ
+    <p><b>lhamdulillahi rabbil ‘alamin</b><br>
+    Artinya: Segala puji bagi Allah, Tuhan seluruh alam.</p>
+
+    <button onclick="toggle('malik2')">Tafsir Mazhab Mālik</button>
+    <button onclick="toggle('hanifah2')">Tafsir Mazhab Hanafi</button>
+
+    <p id="malik2" style="display:none;">
+      <b>Tafsir Imam Mālik:</b><br>
+      “Makna Alhamdulillah ialah pujian kepada Allah karena segala nikmat-Nya, baik yang zahir maupun batin, dan karena Dialah Rabb (penguasa, pencipta, pemelihara) seluruh alam.”<br>
+      Imam Malik menekankan sisi syukur dan adab memuji Allah bukan hanya lewat lisan, tapi juga lewat amal saleh.
+    </p>
+
+    <p id="hanifah2" style="display:none;">
+      <b>Tafsir Imam Abu Hanifah:</b><br>
+      Imam Abu Hanifah memaknai ayat ini sebagai pengakuan bahwa segala puji dan kesempurnaan hanya pantas untuk Allah, karena Dialah yang mengatur seluruh alam dan memberi rezeki kepada makhluk-Nya.<br>
+       Ayat ini menegaskan tauhid dan kekuasaan Allah atas semua ciptaan, serta ajakan agar manusia selalu mengingat Allah dalam setiap pujian.
+    </p>
+  </section>
+ 
+  <!-- 🌿 AYAT 3 -->
+  <section id="ayat3">
+    <h2>Ayat 3</h2>
+    <p dir="rtl" lang="ar"> الرَّحۡمٰنِ الرَّحِيۡمِ
+    </p>
+    <p><b>Ar-Rahmanir-Rahim</b><br>
+    Artinya: Yang Maha Pengasih lagi Maha Penyayang</p>
+
+    <button onclick="toggle('malik3')">Tafsir Mazhab Mālik</button>
+    <button onclick="toggle('hanifah3')">Tafsir Mazhab Hanafi</button>
+
+    <p id="malik3" style="display:none;">
+      <b>Tafsir Imam Mālik:</b><br>
+      “Ar-Rahman adalah yang kasih sayangnya meliputi seluruh makhluk di dunia, dan Ar-Rahim adalah yang kasih sayangnya khusus bagi orang-orang beriman di akhirat.”<br>
+      Ar-Rahman menunjukkan kasih Allah yang luas di dunia untuk semua makhluk, Ar-Rahim menunjukkan kasih Allah yang khusus di akhirat bagi orang beriman.
+    </p>
+
+    <p id="hanifah3" style="display:none;">
+      <b>Tafsir Imam Abu Hanifah:</b><br>
+      “Ar-Rahman rahmat-Nya umum untuk semua makhluk, sedangkan Ar-Rahim rahmat-Nya khusus bagi orang beriman.”<br>
+      Ar-Rahman adalah kasih Allah yang umum untuk semua makhluk, Ar-Rahim adalah kasih Allah yang kekal dan khusus bagi orang beriman di akhirat
+    </p>
+  </section>
+ 
+  <!-- 🌿 AYAT 4 -->
+  <section id="ayat4">
+    <h2>Ayat 4</h2>
+    <p dir="rtl" lang="ar"> مٰلِكِ يَوۡمِ الدِّيۡنِؕ
+    </p>
+    <p><b>mâliki yaumid-dîn</b><br>
+    Artinya: Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami memohon pertolongan.</p>
+
+    <button onclick="toggle('malik4')">Tafsir Mazhab Mālik</button>
+    <button onclick="toggle('hanifah4')">Tafsir Mazhab Hanafi</button>
+
+    <p id="malik4" style="display:none;">
+      <b>Tafsir Imam Mālik:</b><br>
+      “Allah disebut Mālik (Pemilik) karena pada hari itu segala kepemilikan dunia lenyap, dan hanya Dia satu-satunya yang berkuasa"
+      <br>Dalam tafsir Maliki ayat ini menegaskan bahwa Allah adalah penguasa mutlak pada Hari Pembalasan (akhirat) hari ketika semua manusia akan diadili dan tidak ada yang bisa menolong selain Allah.
+    </p>
+
+    <p id="hanifah4" style="display:none;">
+      <b>Tafsir Imam Abu Hanifah:</b><br>
+      “Allah adalah Mālik (Pemilik) Hari Pembalasan, yaitu hari di mana seluruh manusia dibalas sesuai amal mereka, tanpa perantara, tanpa kekuasaan makhluk sedikit pun”  <br>
+      Tafsir Hanafi menekankan bahwa pada hari itu seluruh raja, pemimpin, dan kekuatan manusia hilang, hanya Allah yang berhak memberi keputusan.
+    </p>
+  </section>
+
+ <!-- 🌿 AYAT 5 -->
+  <section id="ayat5">
+    <h2>Ayat 5</h2>
+    <p dir="rtl" lang="ar">اِيَّاكَ نَعۡبُدُ وَاِيَّاكَ نَسۡتَعِيۡنُؕ</p>
+    <p><b>iyyâka na‘budu wa iyyâka nasta‘în</b><br>
+    Artinya: Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami memohon pertolongan.</p>
+
+    <button onclick="toggle('malik5')">Tafsir Mazhab Mālik</button>
+    <button onclick="toggle('hanifah5')">Tafsir Mazhab Hanafi</button>
+
+    <p id="malik5" style="display:none;">
+      <b>Tafsir Imam Mālik:</b><br>
+      “Makna ayat ini adalah pernyataan penghambaan dan penyerahan diri sepenuhnya kepada Allah, yang disertai pengakuan bahwa tiada daya dan kekuatan kecuali dari-Nya.”<br>
+      Ayat ini menegaskan keikhlasan dalam ibadah dan keyakinan bahwa pertolongan sejati hanya datang dari Allah.
+    </p>
+
+    <p id="hanifah5" style="display:none;">
+      <b>Tafsir Imam Abu Hanifah:</b><br>
+      “Iyyāka na‘budu” berarti kami tunduk, taat, dan beribadah hanya kepada-Mu dengan penuh cinta dan pengagungan.
+      ‘Iyyāka nasta‘īn’ berarti kami memohon pertolongan dalam segala urusan dunia dan akhirat hanya kepada-Mu.”<br>
+      Ayat ini mengajarkan hubungan antara ibadah dan tawakal — beribadah dengan ikhlas, lalu menyerahkan hasilnya hanya kepada Allah.
+    </p>
+  </section>
+
+  <!-- 🌿 AYAT 6 -->
+  <section id="ayat6">
+    <h2>Ayat 6</h2>
+    <p dir="rtl" lang="ar">اِهۡدِنَا الصِّرَاطَ الۡمُسۡتَقِيۡمَۙ</p>
+    <p><b>ihdinash-shirâthal-mustaqîm</b><br>
+    Artinya: Bimbinglah kami ke jalan yang lurus.</p>
+
+    <button onclick="toggle('malik6')">Tafsir Mazhab Mālik</button>
+    <button onclick="toggle('hanifah6')">Tafsir Mazhab Hanafi</button>
+
+    <p id="malik6" style="display:none;">
+      <b>Tafsir Imam Mālik:</b><br>
+      “Makna ayat ini adalah permohonan agar Allah menunjukkan dan meneguhkan kita di jalan Islam, yaitu jalan orang-orang yang beriman dan beramal saleh.”<br>
+      Ayat ini adalah doa agar Allah selalu memberi petunjuk kepada jalan Islam yang benar dan menjaga kita dari kesesatan.
+    </p>
+
+    <p id="hanifah6" style="display:none;">
+      <b>Tafsir Imam Abu Hanifah:</b><br>
+      “ihdinash-shirâthal-mustaqîm” yaitu tunjukkanlah kami jalan yang lurus, yakni agama Islam, Al-Qur’an, dan jalan para nabi serta orang saleh.”<br>
+      Ayat ini adalah doa agar Allah memberi dan menjaga petunjuk (hidayah) di jalan Islam yang lurus.
+    </p>
+  </section>
+
+  <!-- 🌿 AYAT 7 -->
+  <section id="ayat7">
+    <h2>Ayat 7</h2>
+    <p dir="rtl" lang="ar">  صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّاۤلِّيْنَࣖ 
+    </p>
+    <p><b>shirâthalladzîna an‘amta ‘alaihim ghairil-maghdlûbi ‘alaihim wa ladl-dlâllîn</b><br>
+    Artinya:(yaitu) jalan orang yang Engkau beri nikmat, bukan jalan orang yang dimurkai, dan bukan pula jalan orang yang sesat</p>
+
+    <button onclick="toggle('malik7')">Tafsir Mazhab Mālik</button>
+    <button onclick="toggle('hanifah7')">Tafsir Mazhab Hanafi</button>
+
+    <p id="malik7" style="display:none;">
+      <b>Tafsir Imam Mālik:</b><br>
+      “Ayat ini memohon agar kita dijauhkan dari jalan orang yang durhaka dan jalan orang yang tersesat dari kebenaran.”
+      <br>Ayat ini bukan hanya doa, tapi juga peringatan agar umat Islam selalu mengevaluasi diri: apakah masih di jalan orang yang diberi nikmat atau sudah mendekati jalan yang salah.<br>
+    </p>
+
+    <p id="hanifah7" style="display:none;">
+      <b>Tafsir Imam Abu Hanifah:</b><br>
+      “Orang yang diberi nikmat ialah para nabi dan orang beriman, yang dimurkai ialah mereka yang mengetahui kebenaran tapi menentang; dan yang sesat ialah mereka yang beribadah tanpa ilmu.”.<br>
+     Ayat ini mengajarkan agar kita meneladani orang beriman, menghindari jalan orang yang menolak kebenaran, dan menjauhi kesesatan karena kurangnya ilmu. Hidayah harus dijaga dengan ilmu dan amal yang benar.
+    </p>
+  </section>
+
+  <!-- 🌸 FOOTER -->
+  <footer>
+    &copy; 2025 Proyek PjBL - Makna Surat Al-Fatihah
+  </footer>
+
+  <!-- ⚙️ JAVASCRIPT kecil -->
+  <script>
+    function toggle(id) {
+      var elem = document.getElementById(id);
+      elem.style.display = (elem.style.display === "none") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
