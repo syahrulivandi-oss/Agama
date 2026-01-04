@@ -111,19 +111,14 @@
 <body>
 
   <!-- 🕌 HEADER -->
-  <header>
+  <header id="top">
     <h1>Makna dan Tafsir Surat Al-Fatihah</h1>
-    <p>Website Edukatif untuk Memahami Tafsir Surat Al Fatihah</p>
+    <p>Website Edukatif untuk Memahami Makna Surat Al Fatihah</p>
   </header>
 
   <nav>
-    <a href="#ayat1">Ayat 1</a>
-    <a href="#ayat2">Ayat 2</a>
-    <a href="#ayat3">Ayat 3</a>
-    <a href="#ayat4">Ayat 4</a>
-    <a href="#ayat5">Ayat 5</a>
-    <a href="#ayat6">Ayat 6</a>
-    <a href="#ayat7">Ayat 7</a>
+    <a href="#ayat1">Materi</a>
+    <a href="#quiz">Quiz</a>
   </nav>
   
   
@@ -180,7 +175,7 @@
     <h2>Ayat 3</h2>
     <p dir="rtl" lang="ar"> الرَّحۡمٰنِ الرَّحِيۡمِ
     </p>
-    <p><b>Ar-Rahmanir-Rahim</b><br>
+    <p><b>Ar-Rahmaanir Rahim</b><br>
     Artinya: Yang Maha Pengasih lagi Maha Penyayang</p>
 
     <button onclick="toggle('malik3')">Tafsir Mazhab Mālik</button>
@@ -205,7 +200,7 @@
     <p dir="rtl" lang="ar"> مٰلِكِ يَوۡمِ الدِّيۡنِؕ
     </p>
     <p><b>mâliki yaumid-dîn</b><br>
-    Artinya: Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami memohon pertolongan.</p>
+    Artinya: Pemilik hari pembalasan.</p>
 
     <button onclick="toggle('malik4')">Tafsir Mazhab Mālik</button>
     <button onclick="toggle('hanifah4')">Tafsir Mazhab Hanafi</button>
@@ -294,6 +289,20 @@
     </p>
   </section>
 
+  <!-- 🧠 QUIZ -->
+  <section id="quiz">
+    <h2>Quiz Surat Al-Fatihah</h2>
+    <p>Uji pengetahuan Anda tentang Surat Al-Fatihah!</p>
+    <button onclick="startQuiz()">Mulai Quiz</button>
+
+    <div id="quizContainer" style="display:none;">
+      <div id="question"></div>
+      <div id="options"></div>
+      <button onclick="nextQuestion()">Jawab</button>
+      <div id="result"></div>
+    </div>
+  </section>
+
   <!-- 🌸 FOOTER -->
   <footer>
     &copy; 2025  Makna Surat Al-Fatihah
@@ -304,6 +313,108 @@
     function toggle(id) {
       var elem = document.getElementById(id);
       elem.style.display = (elem.style.display === "none") ? "block" : "none";
+    }
+
+    // Quiz functionality
+    let questions = JSON.parse(localStorage.getItem('quizQuestions')) || [
+      {
+        question: "Apa arti dari ayat pertama Surat Al-Fatihah?",
+        options: ["Segala puji bagi Allah", "Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang", "Hanya kepada Engkaulah kami menyembah", "Bimbinglah kami ke jalan yang lurus"],
+        answer: 1
+      },
+      {
+        question: "Dalam sehari berapa kali kita membaca surat Al Fatihah?",
+        options: ["5", "11", "17", "23"],
+        answer: 2
+      },
+      {
+        question: "Apa arti dari Ar-Rahman dan Ar-Rahim?",
+        options: ["Tidak ada arti", "Ar-Rahman Maha Pengasih, Ar-Rahim Maha penyayang", "Ar-Rahman Maha Penyayang, Ar-Rahim Maha Penagasih", "Keduanya sama"],
+        answer: 1
+      },
+      {
+        question: "Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami memohon pertolongan,Adalah Arti ayat ke?",
+        options: ["Ayat 1", "Ayat 4", "Ayat 5", "Ayat 7"],
+        answer: 2
+      },
+      {
+        question: "Apa Arti dari 'Mâliki yaumid-dîn'?",
+        options: ["Pemilik hari pembalasan", "Pemilik dunia", "Pemilik manusia", "Pemilik langit"],
+        answer: 0
+      }
+    ];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let userAnswers = [];
+
+    function startQuiz() {
+      currentQuestionIndex = 0;
+      score = 0;
+      userAnswers = [];
+      document.getElementById('quizContainer').style.display = 'block';
+      // Hide all ayat sections
+      for (let i = 1; i <= 7; i++) {
+        document.getElementById('ayat' + i).style.display = 'none';
+      }
+      showQuestion();
+    }
+
+    function showQuestion() {
+      if (currentQuestionIndex < questions.length) {
+        const q = questions[currentQuestionIndex];
+        document.getElementById('question').innerHTML = `<h3>${q.question}</h3>`;
+        document.getElementById('options').innerHTML = q.options.map((opt, i) => `<input type="radio" name="option" value="${i}"> ${opt}<br>`).join('');
+        document.getElementById('result').innerHTML = '';
+      } else {
+        // Show all ayat sections back
+        for (let i = 1; i <= 7; i++) {
+          document.getElementById('ayat' + i).style.display = 'block';
+        }
+        let answersHtml = '<h4>Jawaban Anda:</h4><ul>';
+        questions.forEach((q, i) => {
+          const userAnswer = q.options[userAnswers[i]];
+          const correctAnswer = q.options[q.answer];
+          const isCorrect = userAnswers[i] === q.answer ? ' (Benar)' : ' (Salah)';
+          answersHtml += `<li><strong>${q.question}</strong><br>Jawaban Anda: ${userAnswer}${isCorrect}<br>Jawaban Benar: ${correctAnswer}</li>`;
+        });
+        answersHtml += '</ul>';
+        document.getElementById('question').innerHTML = `<h3>Quiz Selesai! Skor Anda: ${score}/${questions.length}</h3>${answersHtml}`;
+        document.getElementById('options').innerHTML = '';
+        document.getElementById('result').innerHTML = '<button onclick="startQuiz()">Ulangi Quiz</button>';
+      }
+    }
+
+    function nextQuestion() {
+      const selected = document.querySelector('input[name="option"]:checked');
+      if (selected) {
+        userAnswers.push(parseInt(selected.value));
+        if (parseInt(selected.value) === questions[currentQuestionIndex].answer) {
+          score++;
+          document.getElementById('result').innerHTML = 'Benar!';
+        } else {
+          document.getElementById('result').innerHTML = 'Salah!';
+        }
+        currentQuestionIndex++;
+        setTimeout(showQuestion, 1000);
+      }
+    }
+
+    function editQuestions() {
+      const newQ = prompt('Masukkan pertanyaan baru:');
+      if (newQ) {
+        const opt1 = prompt('Opsi 1:');
+        const opt2 = prompt('Opsi 2:');
+        const opt3 = prompt('Opsi 3:');
+        const opt4 = prompt('Opsi 4:');
+        const ans = parseInt(prompt('Jawaban benar (0-3):'));
+        questions.push({
+          question: newQ,
+          options: [opt1, opt2, opt3, opt4],
+          answer: ans
+        });
+        localStorage.setItem('quizQuestions', JSON.stringify(questions));
+        alert('Pertanyaan ditambahkan!');
+      }
     }
   </script>
 
